@@ -14,12 +14,9 @@
                         <tr><td>State: </td><td><select name='MailingState'>
                                     <?php
                                     include 'variables.php';
-                                    foreach ($us_state_abbrevs as $state) {
-                                        if ($row['MailingState'] === $state) {
-                                            echo "<option value='$state' selected>$state</option>";
-                                        } else {
-                                            echo "<option value='$state'>$state</option>";
-                                        }
+                                    foreach ($us_state_abbrevs as $state) 
+									{
+                                        echo "<option value='$state'>$state</option>";
                                     }
                                     ?>
                                 </select>
