@@ -1,18 +1,18 @@
 version: '3.3'
 services:
-    web:
-        build:
-            context: ./
-            dockerfile: DockerFile
-        ports:
-            - '8081:80'
-        volumes:
-            - 'G:\Github\ScoutPHPDemo:/var/www/html'
-        links: 
-            - mysql
-    mysql:
-        image: 'mysql:latest'
-        environment:
-            - MYSQL_ROOT_PASSWORD=r7fmcntr
-        volumes:
-            - 'G:\Github\ScoutPHPDemo\MySqlSetupScripts:/docker-entrypoint-initdb.d'
+  web:
+    build:
+      context: ./
+      dockerfile: DockerFile
+    ports:
+      - '8081:80'
+    volumes:
+      - '/home/ken/Documents/GitHub/ScoutPHPDemo:/var/www/html'
+    links:
+      - mysql
+  mysql:
+    image: 'mysql:latest'
+    environment:
+      - MYSQL_ROOT_PASSWORD=r7fmcntr
+    volumes:
+      - '/home/ken/Documents/GitHub/ScoutPHPDemo/MySqlSetupScripts:/docker-entrypoint-initdb.d'
