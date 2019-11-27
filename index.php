@@ -12,7 +12,7 @@
                         echo(mysqli_error($dbconnection));
                     }
                     if (mysqli_num_rows($result) > 0) {
-                        echo "<table><tr><th>ID</th><th>&nbsp;&nbsp;First Name&nbsp;&nbsp;</th><th>&nbsp;&nbsp;Last Name&nbsp;&nbsp;</th><th>&nbsp;&nbsp;Mailing Address&nbsp;&nbsp;</th><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th>&nbsp;&nbsp;Mailing City&nbsp;&nbsp;</th><th>&nbsp;&nbsp;Mailing State&nbsp;&nbsp;</th><th>&nbsp;&nbsp;Mailing ZipCode&nbsp;&nbsp;</th><td></td></tr>";
+                        echo "<table class=table><thead class=thead-light><tr><th>ID</th><th>&nbsp;&nbsp;First Name&nbsp;&nbsp;</th><th>&nbsp;&nbsp;Last Name&nbsp;&nbsp;</th><th>&nbsp;&nbsp;Mailing Address&nbsp;&nbsp;</th><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th>&nbsp;&nbsp;Mailing City&nbsp;&nbsp;</th><th>&nbsp;&nbsp;Mailing State&nbsp;&nbsp;</th><th>&nbsp;&nbsp;Mailing ZipCode&nbsp;&nbsp;</th><td></td></tr></thead><tbody>";
                         while ($row = mysqli_fetch_array($result)) {
                             echo "<tr>";
                             echo "<td>&nbsp;&nbsp;" . $row['ID'] . "&nbsp;&nbsp;</td>";
@@ -23,11 +23,11 @@
                             echo "<td>&nbsp;&nbsp;" . $row['MailingCity'] . "&nbsp;&nbsp;</td>";
                             echo "<td>&nbsp;&nbsp;" . $row['MailingState'] . "&nbsp;&nbsp;</td>";
                             echo "<td>&nbsp;&nbsp;" . $row['MailingZipCode'] . "&nbsp;&nbsp;</td>";
-                            echo "<td><a href='editperson.php?id=" . $row['ID'] . "'>Edit</a>&nbsp;&nbsp;</td>";
-                            echo "<td><a href='deleteperson.php?id=" . $row['ID'] . "'>Delete</a>&nbsp;&nbsp;</td>";
+                            echo "<td><a class='btn btn-primary' href='editperson.php?id=" . $row['ID'] . "'>Edit</a>&nbsp;&nbsp;</td>";
+                            echo "<td><a class='btn btn-primary' href='deleteperson.php?id=" . $row['ID'] . "'>Delete</a>&nbsp;&nbsp;</td>";
                             echo "</tr>";
                         }
-                        echo "</table>";
+                        echo "</tbody></table>";
                         mysqli_free_result($result);
                     } else {
                         echo "No results returned from person table<br /><br />";
@@ -35,7 +35,7 @@
                 }
                 mysqli_close($dbconnection);
                 ?>
-                <input type="button" value="Add New Person" onclick="javascript:window.location = 'addperson.php'"></input>
+                <input class="form-control" type="button" value="Add New Person" onclick="javascript:window.location = 'addperson.php'"></input>
             </div>
         </div>
     </body>

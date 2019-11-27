@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head><title>DeletePerson</title><?php include 'externalresources.php' ?></head>
+    <head><title>DeletePerson</title><?php include 'externalresources.php' ?><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></head>
     <body>
         <?php
         include 'dbconnection.php';
