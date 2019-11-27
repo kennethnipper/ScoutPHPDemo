@@ -11,12 +11,9 @@ $MailingState = $_POST["MailingState"];
 $MailingZipCode = substr($_POST["MailingZipCode"], 0, 5);
 $UpdatePersonQuery = "UPDATE Person SET FirstName='" . $FirstName . "', LastName='" . $LastName . "', MailingAddress='" . $MailingAddress . "', MailingAddress2='" . $MailingAddress2 . "', MailingCity='" . $MailingCity . "', MailingState='" . $MailingState . "', MailingZipCode='" . $MailingZipCode . "' WHERE ID=" . $ID;
 if ($dbconnection->query($UpdatePersonQuery) === TRUE) {
-    echo "Record updated successfully";
+    header("Location: index.php");
 } else {
     echo "Error updating record: " . $dbconnection->error;
 }
-
 $dbconnection->close();
-header("Location: index.php");
-ob_end_flush();
 ?>

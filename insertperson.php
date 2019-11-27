@@ -10,12 +10,9 @@ $MailingState = $_POST["MailingState"];
 $MailingZipCode = substr($_POST["MailingZipCode"], 0, 5);
 $InsertPersonQuery = "INSERT INTO Person (FirstName, LastName, MailingAddress, MailingAddress2, MailingCity, MailingState, MailingZipCode) VALUES ('$FirstName', '$LastName', '$MailingAddress', '$MailingAddress2', '$MailingCity', '$MailingState', '$MailingZipCode')";
 if ($dbconnection->query($InsertPersonQuery) === TRUE) {
-    echo "Record inserted successfully";
+    header("Location: index.php");
 } else {
     echo "Error inserting record: " . $dbconnection->error;
 }
-
 $dbconnection->close();
-header("Location: index.php");
-ob_end_flush();
 ?>
