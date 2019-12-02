@@ -12,19 +12,18 @@
                         echo(mysqli_error($dbconnection));
                     }
                     if (mysqli_num_rows($result) > 0) {
-                        echo "<table class=table><thead class=thead-light><tr><th>ID</th><th>&nbsp;&nbsp;First Name&nbsp;&nbsp;</th><th>&nbsp;&nbsp;Last Name&nbsp;&nbsp;</th><th>&nbsp;&nbsp;Mailing Address&nbsp;&nbsp;</th><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th>&nbsp;&nbsp;Mailing City&nbsp;&nbsp;</th><th>&nbsp;&nbsp;Mailing State&nbsp;&nbsp;</th><th>&nbsp;&nbsp;Mailing ZipCode&nbsp;&nbsp;</th><td></td></tr></thead><tbody>";
+                        echo "<table class=table><thead class=thead-light><tr><th>First Name</th><th>Last Name</th><th>Mailing Address</th><th>&nbsp;</th><th>Mailing City</th><th>Mailing State</th><th>Mailing ZipCode</th><td></td></tr></thead><tbody>";
                         while ($row = mysqli_fetch_array($result)) {
                             echo "<tr>";
-                            echo "<td>&nbsp;&nbsp;" . $row['ID'] . "&nbsp;&nbsp;</td>";
-                            echo "<td>&nbsp;&nbsp;" . $row['FirstName'] . "&nbsp;&nbsp;</td>";
-                            echo "<td>&nbsp;&nbsp;" . $row['LastName'] . "&nbsp;&nbsp;</td>";
-                            echo "<td>&nbsp;&nbsp;" . $row['MailingAddress'] . "&nbsp;&nbsp;</td>";
-                            echo "<td>&nbsp;&nbsp;" . $row['MailingAddress2'] . "&nbsp;&nbsp;</td>";
-                            echo "<td>&nbsp;&nbsp;" . $row['MailingCity'] . "&nbsp;&nbsp;</td>";
-                            echo "<td>&nbsp;&nbsp;" . $row['MailingState'] . "&nbsp;&nbsp;</td>";
-                            echo "<td>&nbsp;&nbsp;" . $row['MailingZipCode'] . "&nbsp;&nbsp;</td>";
-                            echo "<td><a class='btn btn-primary' href='editperson.php?id=" . $row['ID'] . "'>Edit</a>&nbsp;&nbsp;</td>";
-                            echo "<td><a class='btn btn-primary' href='deleteperson.php?id=" . $row['ID'] . "'>Delete</a>&nbsp;&nbsp;</td>";
+                            echo "<td>" . $row['FirstName'] . "</td>";
+                            echo "<td>" . $row['LastName'] . "</td>";
+                            echo "<td>" . $row['MailingAddress'] . "</td>";
+                            echo "<td>" . $row['MailingAddress2'] . "</td>";
+                            echo "<td>" . $row['MailingCity'] . "</td>";
+                            echo "<td>" . $row['MailingState'] . "</td>";
+                            echo "<td>" . $row['MailingZipCode'] . "</td>";
+                            echo "<td><a class='btn btn-primary' href='editperson.php?id=" . $row['ID'] . "'>Edit</a></td>";
+                            echo "<td><a class='btn btn-primary' href='deleteperson.php?id=" . $row['ID'] . "'>Delete</a></td>";
                             echo "</tr>";
                         }
                         echo "</tbody></table>";
