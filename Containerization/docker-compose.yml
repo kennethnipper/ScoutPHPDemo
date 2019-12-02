@@ -10,9 +10,11 @@ services:
             - 'G:\Github\ScoutPHPDemo:/var/www/html'
         links: 
             - mysql
+        container_name: web
     mysql:
         image: 'mysql:latest'
         environment:
             - MYSQL_ROOT_PASSWORD=r7fmcntr
         volumes:
+            - 'G:\Github\ScoutPHPDemo\MySqlSetupScripts:/docker-entrypoint-initdb.d'
             - 'G:\Github\ScoutPHPDemo\MySqlSetupScripts:/docker-entrypoint-initdb.d'
