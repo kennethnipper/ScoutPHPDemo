@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head><title>Edit Person</title><?php include 'externalresources.php' ?><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></head>
+    <head><title>Add Person</title><?php include 'externalresources.php' ?><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></head>
     <body>
         <form action="insertperson.php" method="post">
             <div class="container">
