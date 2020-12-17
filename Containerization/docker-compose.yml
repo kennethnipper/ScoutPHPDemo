@@ -15,6 +15,6 @@ services:
         image: 'mysql:latest'
         container_name: mysql
         environment:
-            - MYSQL_ROOT_PASSWORD=r7fmcntr
+            - MYSQL_ROOT_PASSWORD=scoutdemo
         volumes:
             - 'G:\Github\ScoutPHPDemo\MySqlSetupScripts:/docker-entrypoint-initdb.d'
