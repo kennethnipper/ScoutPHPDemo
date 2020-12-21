@@ -1,9 +1,9 @@
-CREATE SCHEMA IF NOT EXISTS ScoutDemo;
+CREATE SCHEMA IF NOT EXISTS scoutdemo;
 CREATE USER IF NOT EXISTS 'scoutdemo'@'%' IDENTIFIED WITH mysql_native_password BY 'scoutdemo';
-GRANT ALL ON ScoutDemo.* TO 'scoutdemo'@'%';
+GRANT ALL ON scoutdemo.* TO 'scoutdemo'@'%';
 
-DROP TABLE IF EXISTS `ScoutDemo`.`Person`;
-CREATE TABLE `ScoutDemo`.`Person` (
+DROP TABLE IF EXISTS `scoutdemo`.`Person`;
+CREATE TABLE `scoutdemo`.`Person` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `FirstName` varchar(45) DEFAULT NULL,
   `LastName`varchar(45) DEFAULT NULL,
