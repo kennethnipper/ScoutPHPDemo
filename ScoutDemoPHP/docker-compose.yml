@@ -12,7 +12,7 @@ services:
             - mysql
         container_name: ScoutPHPDemo.Web
     mysql:
-        image: 'mysql:latest'
+        image: 'mysql:8.0.22'
         container_name: ScoutPHPDemo.MySQL
         environment:
             - MYSQL_ROOT_PASSWORD=scoutdemo
